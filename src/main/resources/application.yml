@@ -24,12 +24,79 @@ application:
   rule:
     #远程订阅规则 （！使用前请删除下方示例配置, 注意缩进）
     remote:
-      - name: 'Subscription 1'               #可选参数: 规则名称，如无将使用 path 作为名称
-        path: 'https://example.org/rule.txt' #必要参数: 规则url，仅支持 http/https，不限定响应内容格式
-        type: easylist                       #可选参数: 规则类型：easylist (默认)、dnsmasq、clash、smartdns、hosts
+#      - name: 'Subscription 1'               #可选参数: 规则名称，如无将使用 path 作为名称
+#        path: 'https://example.org/rule.txt' #必要参数: 规则url，仅支持 http/https，不限定响应内容格式
+#       type: easylist                       #可选参数: 规则类型：easylist (默认)、dnsmasq、clash、smartdns、hosts
 
-      - name: 'Subscription 2'
-        path: 'http://example.org/rule.txt'
+#    - name: 'Subscription 2'
+#       path: 'http://example.org/rule.txt'
+      - name: 217综合
+        path: https://raw.githubusercontent.com/217heidai/adblockfilters/main/rules/adblockdns.txt
+        type: easylist
+
+      - name: AdGuard 移动广告过滤器
+        path: https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_11_Mobile/filter.txt
+        type: easylist
+
+      - name: AdGuard 防跟踪保护过滤器
+        path: https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_3_Spyware/filter.txt
+        type: easylist
+
+      - name: AdGuard URL跟踪过滤器
+        path: https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_17_TrackParam/filter.txt
+        type: easylist
+
+      - name: AdGuard 恼人广告过滤器
+        path: https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_14_Annoyances/filter.txt
+        type: easylist
+
+      - name: AdGuard 解除搜索广告和自我推销过滤器
+        path: https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_10_Useful/filter.txt
+        type: easylist
+
+      - name: 大圣净化
+        path: https://raw.githubusercontent.com/jdlingyu/ad-wars/master/hosts
+        type: hosts
+
+      - name: NoAppDownload
+        path: https://raw.githubusercontent.com/Noyllopa/NoAppDownload/master/NoAppDownload.txt
+        type: easylist
+
+      - name: Cats-Team AdBlock List Lite
+        path: https://raw.githubusercontent.com/Cats-Team/AdRules/main/adblock_lite.txt
+        type: easylist
+
+      - name: hagezi/dns-blocklists pro
+        path: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/multi.txt
+        type: easylist
+
+      - name: xndeye web-ad-rule
+        path: https://raw.githubusercontent.com/xndeye/web-ad-rule/master/easylist.txt
+        type: easylist
+        
+      - name: adgk手机去广告规则
+        path: https://raw.githubusercontent.com/banbendalao/ADgk/master/ADgk.txt
+        type: easylist      
+        
+      - name: 百度搜索结果极限净化
+        path: https://raw.githubusercontent.com/banbendalao/ADgk/master/kill-baidu-ad.txt
+        type: easylist   
+        
+      - name: 晴雅AdGuard订阅规则DNS
+        path: http://rssv.cn/adguard/api.php?type=dns
+        type: easylist           
+        
+      - name: 晴雅AdGuard订阅规则HOST
+        path: http://rssv.cn/adguard/api.php?type=host
+        type: hosts    
+        
+      - name: 乘风 视频过滤规则
+        path: https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/mv.txt
+        type: easylist      
+        
+      - name: GoodbyeAds-YouTube-AdBlock
+        path: https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Extension/GoodbyeAds-YouTube-AdBlock.txt
+        type: hosts
 
     #本地规则文件
     local:
@@ -43,12 +110,12 @@ application:
     file_header: |
       ADFS AdBlock ${type}
       Last Modified: ${date}
-      Homepage: https://github.com/fordes123/ad-filters-subscriber/
+      Homepage: https://github.com/Lknife666/Ad_Filter/tree/v2
 
     path: rule #输出规则文件的路径，支持绝对/相对路径
     #输出规则文件列表 （！注意缩进，且每个类型只能输出一个文件）
     files:
-      - name: easylist.txt     #必要参数: 文件名
+      - name: adblockfilters.txt     #必要参数: 文件名
         type: easylist         #必要参数: 文件类型: easylist、dnsmasq、clash、smartdns、hosts
         desc: 'ADFS EasyList'  #可选参数: 文件描述，可在file_header中通过 ${} 中使用
         filter:
@@ -56,7 +123,7 @@ application:
           - wildcard           #通配规则，仅使用通配符
           - unknown            #其他规则，如使用了正则、高级修饰符号等，这表示目前无法支持
 
-      - name: dns.txt
+      - name: adblockdns.txt
         type: easylist
         filter:
           - basic
