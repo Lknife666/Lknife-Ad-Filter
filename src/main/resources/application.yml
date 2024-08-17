@@ -90,7 +90,7 @@ application:
         path: http://rssv.cn/adguard/api.php?type=host
         type: hosts    
         
-      - name: 乘风 视频过滤规则
+      - name: 乘风视频过滤规则
         path: https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/mv.txt
         type: easylist      
         
@@ -108,9 +108,11 @@ application:
     #文件头配置，将自动作为注释添加至每个规则文件开始
     #可使用占位符 ${name}、${type}、${desc} 以及 ${date} (当前日期)
     file_header: |
-      ADFS AdBlock ${type}
+      Title: Lknife_AD规则整合
       Last Modified: ${date}
+      Description:聚合${name}
       Homepage: https://github.com/Lknife666/Ad_Filter/tree/v2
+      Source: https://raw.githubusercontent.com/Lknife666/Ad_Filter/v2/rule/adblockdns.txt
 
     path: rule #输出规则文件的路径，支持绝对/相对路径
     #输出规则文件列表 （！注意缩进，且每个类型只能输出一个文件）
