@@ -18,7 +18,7 @@ application:
     # 注意: 开启此功能可能导致处理时间大幅延长
     domain-detect:
       enable: true
-      timeout: 60
+      timeout: 360
 
   # 规则源配置，remote为远程规则，local为本地规则，支持多个规则源
   rule:
@@ -96,7 +96,19 @@ application:
         
       - name: adblock_privacy
         path: https://raw.githubusercontent.com/uniartisan/adblock_list/master/adblock_privacy.txt
-        type: easylist        
+        type: easylist         
+        
+      - name: httpdns block
+        path: https://raw.githubusercontent.com/Womsxd/MyAdBlockRules/refs/heads/master/httpdnsblock.txt
+        type: easylist           
+        
+      - name: p2pcdn block
+        path: https://raw.githubusercontent.com/Womsxd/MyAdBlockRules/refs/heads/master/p2pcdnblock.txt
+        type: easylist     
+        
+      - name: ProgramAD
+        path: https://raw.githubusercontent.com/earoftoast/clash-rules/main/ProgramAD.yaml
+        type: clash        
 
 
         
@@ -119,33 +131,33 @@ application:
     path: rule #输出规则文件的路径，支持绝对/相对路径
     #输出规则文件列表 （！注意缩进，且每个类型只能输出一个文件）
     files:
-      - name: adblockfilters.txt     #必要参数: 文件名
+      - name: easylist.txt     #必要参数: 文件名
         type: easylist         #必要参数: 文件类型: easylist、dnsmasq、clash、smartdns、hosts
-        desc: '聚合了217heidai、晴雅、Adguard、AGDK、xndeye、乘风、Noyllopa、Cats-Team、hagezi、大圣净化多个上游'  #可选参数: 文件描述，可在file_header中通过 ${} 中使用
+        desc: '规则源：1Hosts (Lite)、AdGuard Base filter、AdGuard Base filter、AdGuard DNS filter、AdRules DNS List、Hblock、NEO DEV HOST、OISD Basic、1024 hosts、ad-wars hosts、StevenBlack hosts、xinggsf、EasyList、Easylist China、EasyPrivacy、CJX's Annoyance List、SmartTV Blocklist、AWAvenue Ads Rule、jiekouAD、晴雅、Adguard、AGDK、xndeye、乘风、Noyllopa、Cats-Team、hagezi、大圣净化多个上游'  #可选参数: 文件描述，可在file_header中通过 ${} 中使用
         filter:
           - basic              #基本规则，不包含任何控制、匹配符号, 可以转换为 hosts
           - wildcard           #通配规则，仅使用通配符
           - unknown            #其他规则，如使用了正则、高级修饰符号等，这表示目前无法支持
 
-      - name: adblockdns.txt
+      - name: dns.txt
         type: easylist
-        desc: '聚合了217heidai、晴雅、Adguard、AGDK、xndeye、乘风、Noyllopa、Cats-Team、hagezi、大圣净化多个上游'
+        desc: '规则源：1Hosts (Lite)、AdGuard Base filter、AdGuard Base filter、AdGuard DNS filter、AdRules DNS List、Hblock、NEO DEV HOST、OISD Basic、1024 hosts、ad-wars hosts、StevenBlack hosts、xinggsf、EasyList、Easylist China、EasyPrivacy、CJX's Annoyance List、SmartTV Blocklist、AWAvenue Ads Rule、jiekouAD、晴雅、Adguard、AGDK、xndeye、乘风、Noyllopa、Cats-Team、hagezi、大圣净化多个上游'
         filter:
           - basic
           - wildcard
 
       - name: dnsmasq.txt
         type: dnsmasq
-        desc: '聚合了217heidai、晴雅、Adguard、AGDK、xndeye、乘风、Noyllopa、Cats-Team、hagezi、大圣净化多个上游'
+        desc: '规则源：1Hosts (Lite)、AdGuard Base filter、AdGuard Base filter、AdGuard DNS filter、AdRules DNS List、Hblock、NEO DEV HOST、OISD Basic、1024 hosts、ad-wars hosts、StevenBlack hosts、xinggsf、EasyList、Easylist China、EasyPrivacy、CJX's Annoyance List、SmartTV Blocklist、AWAvenue Ads Rule、jiekouAD、晴雅、Adguard、AGDK、xndeye、乘风、Noyllopa、Cats-Team、hagezi、大圣净化多个上游'
 
       - name: clash.yaml
         type: clash
-        desc: '聚合了217heidai、晴雅、Adguard、AGDK、xndeye、乘风、Noyllopa、Cats-Team、hagezi、大圣净化多个上游'
+        desc: '规则源：1Hosts (Lite)、AdGuard Base filter、AdGuard Base filter、AdGuard DNS filter、AdRules DNS List、Hblock、NEO DEV HOST、OISD Basic、1024 hosts、ad-wars hosts、StevenBlack hosts、xinggsf、EasyList、Easylist China、EasyPrivacy、CJX's Annoyance List、SmartTV Blocklist、AWAvenue Ads Rule、jiekouAD、晴雅、Adguard、AGDK、xndeye、乘风、Noyllopa、Cats-Team、hagezi、大圣净化多个上游'
 
       - name: smartdns.txt
         type: smartdns
-        desc: '聚合了217heidai、晴雅、Adguard、AGDK、xndeye、乘风、Noyllopa、Cats-Team、hagezi、大圣净化多个上游'
+        desc: '规则源：1Hosts (Lite)、AdGuard Base filter、AdGuard Base filter、AdGuard DNS filter、AdRules DNS List、Hblock、NEO DEV HOST、OISD Basic、1024 hosts、ad-wars hosts、StevenBlack hosts、xinggsf、EasyList、Easylist China、EasyPrivacy、CJX's Annoyance List、SmartTV Blocklist、AWAvenue Ads Rule、jiekouAD、晴雅、Adguard、AGDK、xndeye、乘风、Noyllopa、Cats-Team、hagezi、大圣净化多个上游'
 
       - name: hosts.txt
         type: hosts
-        desc: '聚合了217heidai、晴雅、Adguard、AGDK、xndeye、乘风、Noyllopa、Cats-Team、hagezi、大圣净化多个上游'
+        desc: '规则源：1Hosts (Lite)、AdGuard Base filter、AdGuard Base filter、AdGuard DNS filter、AdRules DNS List、Hblock、NEO DEV HOST、OISD Basic、1024 hosts、ad-wars hosts、StevenBlack hosts、xinggsf、EasyList、Easylist China、EasyPrivacy、CJX's Annoyance List、SmartTV Blocklist、AWAvenue Ads Rule、jiekouAD、晴雅、Adguard、AGDK、xndeye、乘风、Noyllopa、Cats-Team、hagezi、大圣净化多个上游'

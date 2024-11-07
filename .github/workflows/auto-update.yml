@@ -41,7 +41,7 @@ jobs:
         id: commit
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: 🚀 CI Updated
+          commit_message: 🚀 Rules Updated
 
       - name: Delete Workflow Runs
         uses: Mattraks/delete-workflow-runs@v2
