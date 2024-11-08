@@ -18,7 +18,7 @@ application:
     # 注意: 开启此功能可能导致处理时间大幅延长
     domain-detect:
       enable: true
-      timeout: 80
+      timeout: 30
 
   # 规则源配置，remote为远程规则，local为本地规则，支持多个规则源
   rule:
