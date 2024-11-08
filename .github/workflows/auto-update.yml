@@ -8,7 +8,7 @@ on:
       - '.devcontainer/**'
       - 'LICENSE'
   schedule:
-    - cron: 0 */8 * * *
+    - cron: 0 */12 * * *
   workflow_dispatch:
 
 env:
@@ -41,7 +41,7 @@ jobs:
         id: commit
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: 🚀 Rules Updated
+          commit_message: 🚀 CI Updated
 
       - name: Delete Workflow Runs
         uses: Mattraks/delete-workflow-runs@v2
