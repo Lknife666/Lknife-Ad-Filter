@@ -97,7 +97,6 @@ application:
       - name: GoodbyeAds-YouTube-AdBlock
         path: https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Extension/GoodbyeAds-YouTube-AdBlock.txt
         type: hosts
-		
       - name: adblock_privacy
         path: https://raw.githubusercontent.com/uniartisan/adblock_list/master/adblock_privacy.txt
         type: easylist         
