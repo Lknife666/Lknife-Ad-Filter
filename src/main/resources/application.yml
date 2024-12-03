@@ -97,6 +97,22 @@ application:
       - name: GoodbyeAds-YouTube-AdBlock
         path: https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Extension/GoodbyeAds-YouTube-AdBlock.txt
         type: hosts
+		
+      - name: adblock_privacy
+        path: https://raw.githubusercontent.com/uniartisan/adblock_list/master/adblock_privacy.txt
+        type: easylist         
+
+      - name: httpdns block
+        path: https://raw.githubusercontent.com/Womsxd/MyAdBlockRules/refs/heads/master/httpdnsblock.txt
+        type: easylist           
+
+      - name: p2pcdn block
+        path: https://raw.githubusercontent.com/Womsxd/MyAdBlockRules/refs/heads/master/p2pcdnblock.txt
+        type: easylist     
+
+      - name: ProgramAD
+        path: https://raw.githubusercontent.com/earoftoast/clash-rules/main/ProgramAD.yaml
+        type: clash        
 
     #本地规则文件
     local:
