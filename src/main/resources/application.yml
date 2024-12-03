@@ -18,7 +18,7 @@ application:
     # 注意: 开启此功能可能导致处理时间大幅延长
     domain-detect:
       enable: true
-      timeout: 30
+      timeout: 60
 
   # 规则源配置，remote为远程规则，local为本地规则，支持多个规则源
   rule:
@@ -69,49 +69,51 @@ application:
       - name: xndeye web-ad-rule
         path: https://raw.githubusercontent.com/xndeye/web-ad-rule/master/easylist.txt
         type: easylist
-        
+
       - name: adgk手机去广告规则
         path: https://raw.githubusercontent.com/banbendalao/ADgk/master/ADgk.txt
         type: easylist      
-        
+
       - name: 百度搜索结果极限净化
         path: https://raw.githubusercontent.com/banbendalao/ADgk/master/kill-baidu-ad.txt
         type: easylist   
-        
+
       - name: 晴雅AdGuard订阅规则DNS
         path: http://rssv.cn/adguard/api.php?type=dns
         type: easylist           
-        
+
       - name: 晴雅AdGuard订阅规则HOST
         path: http://rssv.cn/adguard/api.php?type=host
         type: hosts    
-        
+
       - name: 乘风视频过滤规则
         path: https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/mv.txt
         type: easylist      
-        
+
       - name: GoodbyeAds-YouTube-AdBlock
         path: https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Extension/GoodbyeAds-YouTube-AdBlock.txt
         type: hosts
-        
+
       - name: adblock_privacy
         path: https://raw.githubusercontent.com/uniartisan/adblock_list/master/adblock_privacy.txt
         type: easylist         
-        
+
       - name: httpdns block
         path: https://raw.githubusercontent.com/Womsxd/MyAdBlockRules/refs/heads/master/httpdnsblock.txt
         type: easylist           
-        
+
       - name: p2pcdn block
         path: https://raw.githubusercontent.com/Womsxd/MyAdBlockRules/refs/heads/master/p2pcdnblock.txt
         type: easylist     
-        
+
       - name: ProgramAD
         path: https://raw.githubusercontent.com/earoftoast/clash-rules/main/ProgramAD.yaml
         type: clash        
 
+      - name: damengzhu jiekouAD
+        path: https://raw.githubusercontent.com/damengzhu/banad/main/jiekouAD.txt
+        type: easylist  		
 
-        
 
     #本地规则文件
     local:
